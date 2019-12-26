@@ -10,4 +10,6 @@ import com.example.jackson.jsonview.model.User;
 public interface UserRepository {
 
 	public List<User> getAll();
+	
+	public User save(final User user);
 }

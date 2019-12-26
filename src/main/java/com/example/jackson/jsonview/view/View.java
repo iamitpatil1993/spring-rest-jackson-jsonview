@@ -33,6 +33,19 @@ public interface View {
 		 */
 		public static interface Internal extends External {
 		}
+
+		/**
+		 * View to define desierilization of request body for POST call. any fields
+		 * other than defined by this view, will be just ignored.
+		 * 
+		 * @author amipatil
+		 *
+		 */
+		public static interface Post {
+		}
+
+		public static interface PUT {
+		}
 	}
 
 }

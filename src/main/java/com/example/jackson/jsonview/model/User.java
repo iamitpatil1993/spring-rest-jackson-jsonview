@@ -10,33 +10,35 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class User implements Serializable {
 
 	private static final long serialVersionUID = -353971991551040124L;
 	
 	// This will make this field part of External View
-	@JsonView(View.UserView.External.class)
+	@JsonView(value = {View.UserView.External.class, View.UserView.PUT.class})
 	private Integer id;
 	
-	@JsonView(View.UserView.External.class)
+	@JsonView(value = {View.UserView.External.class, View.UserView.Post.class, View.UserView.PUT.class})
 	private String firstName;
 	
-	@JsonView(View.UserView.External.class)
+	@JsonView(value = {View.UserView.External.class, View.UserView.Post.class, View.UserView.PUT.class})
 	private String lastName;
 	
-	@JsonView(View.UserView.Internal.class)
+	@JsonView(value = {View.UserView.Internal.class, View.UserView.Post.class})
 	private String ssn;
 	
-	@JsonView(View.UserView.Internal.class)
+	@JsonView(value = {View.UserView.Internal.class, View.UserView.Post.class})
 	private Calendar dob;
 	
 	// This will make this field part of Internal View
-	@JsonView(View.UserView.Internal.class)
+	@JsonView(value = {View.UserView.Internal.class, View.UserView.Post.class, View.UserView.PUT.class})
 	private String mobileNo;
 	
 	@JsonView(View.UserView.External.class)

@@ -21,6 +21,16 @@ public class MockedUserRepository implements UserRepository {
 		return users;
 	}
 
+	@Override
+	public User save(User user) {
+		user.setId(Double.valueOf(Math.random() * 100).intValue());
+		user.setCreatedOn(Calendar.getInstance());
+		user.setUpdatedOn(Calendar.getInstance());
+		user.setDeleted(false);
+		
+		return user;
+	}
+
 	private User createMockedUser(int i) {
 		final User user = new User();
 		user.setId(i);
