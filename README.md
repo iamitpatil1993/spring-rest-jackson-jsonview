@@ -47,5 +47,10 @@ Provides limited details of user resource since this is public facing API.
 Similarly,
 POST and PUT API uses different views to restrict fields allowed to post/update in respective calls.
 
+## More info
+[https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring](https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring)
+
+[https://www.baeldung.com/jackson-json-view-annotation](https://www.baeldung.com/jackson-json-view-annotation)
+
  
 
