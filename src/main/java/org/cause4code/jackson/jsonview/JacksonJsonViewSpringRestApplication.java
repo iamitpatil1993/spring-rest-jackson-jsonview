@@ -1,8 +1,13 @@
-package com.example.jackson.jsonview;
+package org.cause4code.jackson.jsonview;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * 
+ * @author amipatil
+ *
+ */
 @SpringBootApplication
 public class JacksonJsonViewSpringRestApplication {
 

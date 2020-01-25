@@ -1,14 +1,18 @@
-package com.example.jackson.jsonview.repository;
+package org.cause4code.jackson.jsonview.repository;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 
+import org.cause4code.jackson.jsonview.model.User;
 import org.springframework.stereotype.Repository;
 
-import com.example.jackson.jsonview.model.User;
-
+/**
+ * 
+ * @author amipatil
+ *
+ */
 @Repository
 public class MockedUserRepository implements UserRepository {
 

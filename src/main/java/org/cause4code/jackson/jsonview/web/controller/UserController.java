@@ -1,9 +1,13 @@
-package com.example.jackson.jsonview.web.controller;
+package org.cause4code.jackson.jsonview.web.controller;
 
 import java.util.List;
 
+import org.cause4code.jackson.jsonview.model.User;
+import org.cause4code.jackson.jsonview.service.UserService;
+import org.cause4code.jackson.jsonview.view.View;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.jackson.jsonview.model.User;
-import com.example.jackson.jsonview.service.UserService;
-import com.example.jackson.jsonview.view.View;
 import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController
@@ -25,6 +26,7 @@ public class UserController {
 	private final Logger logger = LoggerFactory.getLogger(getClass());
 	private UserService userService;
 
+	@Autowired
 	public UserController(final UserService userService) {
 		this.userService = userService;
 	}
@@ -63,7 +65,7 @@ public class UserController {
 	 */
 	@PostMapping(path = "/users", consumes = { "application/json" })
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public ResponseEntity<User> post(@RequestBody @JsonView(value = View.UserView.Post.class) User user) {
+	public ResponseEntity<User> post(final @RequestBody @JsonView(value = View.UserView.Post.class) User user) {
 		User savedUser = userService.saveUser(user);
 		return ResponseEntity.status(HttpStatus.CREATED).body(savedUser);
 	}
@@ -75,13 +77,10 @@ public class UserController {
 	 */
 	@PutMapping(path = "/users/{userId}", consumes = { "application/json" })
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public ResponseEntity<?> put(@RequestBody @JsonView(value = View.UserView.PUT.class) User user,
+	public ResponseEntity<?> put(final @RequestBody @JsonView(value = View.UserView.PUT.class) User user,
 			@PathVariable Integer userId) {
 		user.setId(userId);
-		logger.info("Model received in put calls :: {}", user);
-
 		// Update user here
-
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 	}
 }

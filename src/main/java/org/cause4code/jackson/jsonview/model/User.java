@@ -1,9 +1,10 @@
-package com.example.jackson.jsonview.model;
+package org.cause4code.jackson.jsonview.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
 
-import com.example.jackson.jsonview.view.View;
+import org.cause4code.jackson.jsonview.view.View;
+
 import com.fasterxml.jackson.annotation.JsonView;
 
 import lombok.AllArgsConstructor;

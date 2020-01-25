@@ -1,13 +1,17 @@
-package com.example.jackson.jsonview.service;
+package org.cause4code.jackson.jsonview.service;
 
 import java.util.List;
 
+import org.cause4code.jackson.jsonview.model.User;
+import org.cause4code.jackson.jsonview.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.jackson.jsonview.model.User;
-import com.example.jackson.jsonview.repository.UserRepository;
-
+/**
+ * 
+ * @author amipatil
+ *
+ */
 @Service
 public class UserService {
 

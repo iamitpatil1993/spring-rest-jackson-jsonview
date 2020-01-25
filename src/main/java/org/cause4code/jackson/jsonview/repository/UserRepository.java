@@ -1,10 +1,9 @@
-package com.example.jackson.jsonview.repository;
+package org.cause4code.jackson.jsonview.repository;
 
 import java.util.List;
 
+import org.cause4code.jackson.jsonview.model.User;
 import org.springframework.stereotype.Repository;
-
-import com.example.jackson.jsonview.model.User;
 
 @Repository
 public interface UserRepository {
